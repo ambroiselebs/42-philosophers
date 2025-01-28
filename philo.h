@@ -30,6 +30,16 @@
 # define C "\033[1;36m"
 # define W "\033[1;37m"
 
+/*
+	n 			= Id philo
+	m_count		= nb repas mage
+	is_eating	= bool si mage
+	thread		= thread associe au philo
+	last_eat	= temps depuis dernier repas
+	info		= lien vers t_info
+	fork_r		= fourchette droite
+	fork_l		= fourchette gauche
+*/
 typedef struct s_philo
 {
 	int				n;
@@ -42,6 +52,21 @@ typedef struct s_philo
 	pthread_mutex_t	fork_l;
 }	t_philo;
 
+/*
+	philo_eat		= total repas consomme
+	n_philo			= nb total de philo
+	t_die			= temps avant meurt de faim
+	t_eat			= temps qui met a manger
+	t_sleep			= temps de repos
+	n_eat			= nb de repas avant fin
+	stop			= bool en cours/fin
+	t_start			= timestamp du debut de la simu
+	*philo			= tableau de philos
+	print			= mutex pour gerer les print
+	m_stop			= mutex pour gerer l'arret de la simu
+	m_eat			= mutex pour gerer l'acces aux repas
+	dead			= mutex piur gerer la mort
+*/
 typedef struct s_info
 {
 	int				philo_eat;
