@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-01-25 19:22:41 by aberenge          #+#    #+#             */
-/*   Updated: 2025-01-26 20:01:12 by aberenge         ###   ########.fr       */
+/*   Created: 2025/01/25 19:22:41 by aberenge          #+#    #+#             */
+/*   Updated: 2025/01/31 15:25:04 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,11 @@ int	var_init(t_info *data, char **av)
 	pthread_mutex_init(&data->m_eat, NULL);
 	pthread_mutex_init(&data->dead, NULL);
 	data->stop = 0;
-	data->philo = malloc(sizeof(t_philo) * data->n_philo);
-	if (data->philo == NULL)
-		return (2);
 	if (check_num(av))
-	{
-		printf("Invalid Arguments\n");
-		return (1);
-	}
-	data->philo_eat = 0;
+		return (printf("Invalid Arguments\n"), 1);
 	data->n_philo = ft_atoi(av[1]);
+	if (data->n_philo <= 0)
+		return (1);
 	data->t_die = ft_atoi(av[2]);
 	data->t_eat = ft_atoi(av[3]);
 	data->t_sleep = ft_atoi(av[4]);
@@ -103,5 +98,9 @@ int	var_init(t_info *data, char **av)
 		data->n_eat = ft_atoi(av[5]);
 	if (av[5] && data->n_eat == 0)
 		return (1);
+	data->philo = malloc(sizeof(t_philo) * data->n_philo);
+	if (!data->philo)
+		return (printf("Memory allocation failed\n"), 2);
+	data->philo_eat = 0;
 	return (0);
 }
