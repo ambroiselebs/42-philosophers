@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:32:29 by aberenge          #+#    #+#             */
-/*   Updated: 2025/02/17 16:30:49 by aberenge         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:56:03 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,14 +67,14 @@ void *philo_life(void *phi)
 	pthread_t t;
 
 	philo = (t_philo *)phi;
+	pthread_create(&t, NULL, check_death, phi);
+	pthread_detach(t);
 	if (philo->n % 2 == 0)
 		ft_usleep(philo->info->t_eat / 10);
 	while (!is_dead(philo, 0))
 	{
-		pthread_create(&t, NULL, check_death, phi);
 		take_fork(philo);
 		philo_eat(philo);
-		pthread_detach(t);
 		if (philo->m_count == philo->info->n_eat)
 		{
 			pthread_mutex_lock(&philo->info->m_stop);
