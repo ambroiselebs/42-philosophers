@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-01-25 18:32:29 by aberenge          #+#    #+#             */
-/*   Updated: 2025-01-26 19:01:36 by aberenge         ###   ########.fr       */
+/*   Created: 2025/01/25 18:32:29 by aberenge          #+#    #+#             */
+/*   Updated: 2025/02/17 16:30:49 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ void	philo_eat(t_philo *philo)
 	print(philo, " is thinking\n");
 }
 
-void	*philo_life(void *phi)
+void *philo_life(void *phi)
 {
-	t_philo		*philo;
-	pthread_t	t;
+	t_philo *philo;
+	pthread_t t;
 
 	philo = (t_philo *)phi;
 	if (philo->n % 2 == 0)

@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 19:22:41 by aberenge          #+#    #+#             */
-/*   Updated: 2025/01/31 15:25:04 by aberenge         ###   ########.fr       */
+/*   Updated: 2025/02/17 16:11:17 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,8 +94,12 @@ int	var_init(t_info *data, char **av)
 	data->t_die = ft_atoi(av[2]);
 	data->t_eat = ft_atoi(av[3]);
 	data->t_sleep = ft_atoi(av[4]);
+	data->n_eat = -1;
 	if (av[5])
 		data->n_eat = ft_atoi(av[5]);
+	else
+		data->n_eat = -1;
+
 	if (av[5] && data->n_eat == 0)
 		return (1);
 	data->philo = malloc(sizeof(t_philo) * data->n_philo);
