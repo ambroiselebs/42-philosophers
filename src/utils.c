@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aberenge <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-01-25 18:01:31 by aberenge          #+#    #+#             */
-/*   Updated: 2025-01-26 19:01:28 by aberenge         ###   ########.fr       */
+/*   Created: 2025/01/25 18:01:31 by aberenge          #+#    #+#             */
+/*   Updated: 2025/02/19 15:28:05 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	print(t_philo *philo, char *str)
 	time = timestamp() - philo->info->t_start;
 	if (!philo->info->stop && time >= 0 \
 			&& time <= INT_MAX && !is_dead(philo, 0))
-		printf(B"%lld"RST" %d %s", timestamp() - philo->info->t_start,
+		printf(B"%lld"RST" %d%s", timestamp() - philo->info->t_start,
 			philo->n, str);
 	pthread_mutex_unlock(&(philo->info->print));
 }
