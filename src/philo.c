@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 18:32:29 by aberenge          #+#    #+#             */
-/*   Updated: 2025/02/17 16:56:57 by aberenge         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:45:21 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ void	philo_eat(t_philo *philo)
 	print(philo, " is thinking\n");
 }
 
-void *philo_life(void *phi)
+void	*philo_life(void *phi)
 {
-	t_philo *philo;
-	pthread_t t;
+	t_philo		*philo;
+	pthread_t	t;
 
 	philo = (t_philo *)phi;
 	pthread_create(&t, NULL, check_death, phi);

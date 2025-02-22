@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 13:00:53 by aberenge          #+#    #+#             */
-/*   Updated: 2025/02/17 16:21:50 by aberenge         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:44:49 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	clear_philo(t_info *data)
 int	main(int ac, char **av)
 {
 	t_info	data;
-	data.philo = NULL;
 
+	data.philo = NULL;
 	if (ac != 5 && ac != 6)
 		return (0);
 	if (var_init(&data, av) == 1)

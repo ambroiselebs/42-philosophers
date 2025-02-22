@@ -6,7 +6,7 @@
 /*   By: aberenge <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 19:22:41 by aberenge          #+#    #+#             */
-/*   Updated: 2025/02/17 16:11:17 by aberenge         ###   ########.fr       */
+/*   Updated: 2025/02/22 16:45:02 by aberenge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,6 @@ int	var_init(t_info *data, char **av)
 		data->n_eat = ft_atoi(av[5]);
 	else
 		data->n_eat = -1;
-
 	if (av[5] && data->n_eat == 0)
 		return (1);
 	data->philo = malloc(sizeof(t_philo) * data->n_philo);
